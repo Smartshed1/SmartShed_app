@@ -16,36 +16,43 @@ export default function SchoolManagementRegistration({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>School Management Registration</Text>
+      <Text style={styles.header}>School Management</Text>
 
       <TextInput
         style={styles.input}
-        placeholder="Full Name"
+        placeholder="full name"
         value={name}
         onChangeText={setName}
       />
       <TextInput
         style={styles.input}
-        placeholder="Email Address"
+        placeholder="School email"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
       />
       <TextInput
         style={styles.input}
-        placeholder="School Name"
+        placeholder="phone number"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="school name"
         value={schoolName}
         onChangeText={setSchoolName}
       />
       <TextInput
         style={styles.input}
-        placeholder="School Type (e.g., Primary, Secondary)"
+        placeholder="School type"
         value={schoolType}
         onChangeText={setSchoolType}
       />
       <TextInput
         style={styles.input}
-        placeholder="Position (e.g., Principal, Admin)"
+        placeholder="Position"
         value={position}
         onChangeText={setPosition}
       />
@@ -75,28 +82,28 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 24,
-    fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
+    paddingTop: 50,
   },
   input: {
-    borderWidth: 1,
+    borderBottomWidth: 1,
     borderColor: "#ccc",
     padding: 10,
     marginBottom: 15,
-    borderRadius: 5,
-    backgroundColor: "#fff",
   },
   registerButton: {
     backgroundColor: "green",
-    padding: 15,
+    padding: 12,
+    width: 300,
     borderRadius: 5,
     alignItems: "center",
+    margin: "auto",
     marginTop: 10,
+    borderRadius: 50,
   },
   registerButtonText: {
     color: "#fff",
-    fontWeight: "bold",
     fontSize: 16,
   },
   loginText: {

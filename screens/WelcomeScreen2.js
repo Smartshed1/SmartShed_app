@@ -14,7 +14,7 @@ export default function WelcomeScreen2({ navigation }) {
         source={require("../assets/welcome-image.png")}
         style={styles.image}
       />
-      <Text style={styles.text}>Welcome to Our App!</Text>
+      <Text style={styles.text}>SmartSched!</Text>
     </View>
   );
 }
@@ -22,16 +22,17 @@ export default function WelcomeScreen2({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "lightgreen",
+    backgroundColor: "rgba(0, 255, 0, 0.5)",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 300,
   },
   text: {
     marginTop: 20,
-    fontSize: 16,
+    fontSize: 26,
+    color: "white",
   },
 });

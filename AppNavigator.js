@@ -25,15 +25,25 @@ export default function AppNavigator() {
         component={WelcomeScreen2}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="SignUpOptions" component={SignUpOptions} />
-      <Stack.Screen name="ParentRegistration" component={ParentRegistration} />
+      <Stack.Screen
+        name="SignUpOptions"
+        component={SignUpOptions}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ParentRegistration"
+        component={ParentRegistration}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="StudentRegistration"
         component={StudentRegistration}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="SchoolManagementRegistration"
         component={SchoolManagementRegistration}
+        options={{ headerShown: false }}
       />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Dashboard" component={Dashboard} />

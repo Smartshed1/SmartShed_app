@@ -17,59 +17,64 @@ export default function StudentRegistration({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Student Registration</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Full Name"
-        value={name}
-        onChangeText={setName}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="School Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Phone Number"
-        value={phoneNumber}
-        onChangeText={setPhoneNumber}
-        keyboardType="phone-pad"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Date of Birth (YYYY-MM-DD)"
-        value={dob}
-        onChangeText={setDob}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="School Name"
-        value={schoolName}
-        onChangeText={setSchoolName}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Class/Grade"
-        value={classGrade}
-        onChangeText={setClassGrade}
-      />
+      <Text style={styles.header}>Student</Text>
+      <View>
+        <View>
+          <TextInput
+            style={styles.input}
+            placeholder="full name"
+            value={name}
+            onChangeText={setName}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="school email"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="phone number"
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
+            keyboardType="phone-pad"
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Date of birth"
+            value={dob}
+            onChangeText={setDob}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="School name"
+            value={schoolName}
+            onChangeText={setSchoolName}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Class/Grade"
+            value={classGrade}
+            onChangeText={setClassGrade}
+          />
+        </View>
+        <View>
+          <TouchableOpacity style={styles.registerButton}>
+            <Text style={styles.registerButtonText}>Create Account</Text>
+          </TouchableOpacity>
 
-      <TouchableOpacity style={styles.registerButton}>
-        <Text style={styles.registerButtonText}>Create Account</Text>
-      </TouchableOpacity>
-
-      <Text style={styles.loginText}>
-        Already have an account?{" "}
-        <Text
-          style={styles.loginLink}
-          onPress={() => navigation.navigate("Login")}
-        >
-          Login
-        </Text>
-      </Text>
+          <Text style={styles.loginText}>
+            Already have an account?{" "}
+            <Text
+              style={styles.loginLink}
+              onPress={() => navigation.navigate("Login")}
+            >
+              Login
+            </Text>
+          </Text>
+        </View>
+      </View>
     </View>
   );
 }
@@ -84,26 +89,28 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
+    marginTop: 40,
     textAlign: "center",
   },
   input: {
-    borderWidth: 1,
-    borderColor: "#ccc",
     padding: 10,
     marginBottom: 15,
     borderRadius: 5,
-    backgroundColor: "#fff",
+    borderBottomWidth: 1,
+    borderBottomColor: "grey",
   },
   registerButton: {
     backgroundColor: "green",
-    padding: 15,
+    padding: 12,
+    width: 300,
     borderRadius: 5,
     alignItems: "center",
+    margin: "auto",
     marginTop: 10,
+    borderRadius: 50,
   },
   registerButtonText: {
     color: "#fff",
-    fontWeight: "bold",
     fontSize: 16,
   },
   loginText: {
