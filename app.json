@@ -7,6 +7,21 @@
       "ios",
       "android",
       "web"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "fd09bba0-46ed-421f-bbee-fc9150bac4ef"
+      }
+    },
+    "android": {
+      "package": "com.usman260.SmartShed"
+    },
+    "ios": {
+      "bundleIdentifier": "com.usman260.SmartShed"
+    },
+    "web": {
+      "output": "server",
+      "bundler": "metro"
+    }
   }
 }
