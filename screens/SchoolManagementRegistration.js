@@ -5,7 +5,9 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Alert,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function SchoolManagementRegistration({ navigation }) {
   const [name, setName] = useState("");
@@ -14,6 +16,29 @@ export default function SchoolManagementRegistration({ navigation }) {
   const [schoolType, setSchoolType] = useState("");
   const [position, setPosition] = useState("");
 
+  const handleRegister = async () => {
+    if (!name || !email || !schoolName || !schoolType || !position) {
+      Alert.alert("Error", "Please fill all fields");
+      return;
+    }
+
+    const user = {
+      name,
+      email,
+      schoolName,
+      schoolType,
+      position,
+      role: "school-management",
+    };
+
+    try {
+      await AsyncStorage.setItem("user", JSON.stringify(user));
+      Alert.alert("Success", "Account created successfully");
+      navigation.navigate("Login");
+    } catch (error) {
+      Alert.alert("Error", "Failed to save data");
+    }
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.header}>School Management</Text>
@@ -57,7 +82,7 @@ export default function SchoolManagementRegistration({ navigation }) {
         onChangeText={setPosition}
       />
 
-      <TouchableOpacity style={styles.registerButton}>
+      <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
         <Text style={styles.registerButtonText}>Create Account</Text>
       </TouchableOpacity>
 

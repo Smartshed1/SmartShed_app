@@ -5,11 +5,29 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Alert,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    try {
+      const storedUser = await AsyncStorage.getItem("user");
+      const user = storedUser ? JSON.parse(storedUser) : null;
+
+      if (user && user.email === email) {
+        Alert.alert("Success", "Login successful");
+        navigation.navigate("Dashboard", { user });
+      } else {
+        Alert.alert("Error", "Invalid email or account does not exist");
+      }
+    } catch (error) {
+      Alert.alert("Error", "Failed to login");
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -29,7 +47,7 @@ export default function Login({ navigation }) {
         secureTextEntry
       />
 
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
 
